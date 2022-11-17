@@ -11,6 +11,6 @@ COPY src /build/src
 RUN mvn package
 
 FROM tomcat:8.5-jdk11-openjdk-slim
-COPY --from=builder /build/target/bernat.war /usr/local/tomcat/webapps/
+COPY --from=builder /build/target/martagon.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
